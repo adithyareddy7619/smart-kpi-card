@@ -1,0 +1,17 @@
+{
+		"version": "1.0.0.0",
+		"author": {"name":"Smart KPI Card","email":"admin@smartkpicard.com"},
+		"resources": [
+			{
+				"resourceId": "rId0",
+				"sourceType": 5,
+				"file": "resources/smartKpiCard1BA512366D2549D7AB8CF72DDC8316C5.pbiviz.json"
+			}
+		],
+		"visual": {"name":"smartKpiCard","displayName":"Smart KPI Card","guid":"smartKpiCard1BA512366D2549D7AB8CF72DDC8316C5","visualClassName":"Visual","version":"1.0.0.0","description":"Smart KPI Card with auto-scaling sparklines, PY and Budget variance badges","supportUrl":"https://github.com","gitHubUrl":"https://github.com"},
+		"metadata": {
+			"pbivizjson": {
+				"resourceId": "rId0"
+			}
+		}
+	}

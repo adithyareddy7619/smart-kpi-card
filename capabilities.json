@@ -1,0 +1,49 @@
+{
+    "dataRoles": [
+        { "displayName": "Month Field",     "name": "category",  "kind": "Grouping" },
+        { "displayName": "Week Field",      "name": "category2", "kind": "Grouping" },
+        { "displayName": "Actual Value",    "name": "actual",    "kind": "Measure" },
+        { "displayName": "PY Value",        "name": "py",        "kind": "Measure" },
+        { "displayName": "Budget Value",    "name": "budget",    "kind": "Measure" },
+        { "displayName": "Tooltip Field 1", "name": "tooltip1",  "kind": "Measure" },
+        { "displayName": "Tooltip Field 2", "name": "tooltip2",  "kind": "Measure" },
+        { "displayName": "Tooltip Field 3", "name": "tooltip3",  "kind": "Measure" }
+    ],
+    "objects": {
+        "cardSettings":     { "properties": { "backgroundColor": { "type": { "fill": { "solid": { "color": true } } } }, "borderColor": { "type": { "fill": { "solid": { "color": true } } } }, "borderWidth": { "type": { "numeric": true } }, "borderRadius": { "type": { "numeric": true } } } },
+        "titleSettings":    { "properties": { "fontFamily": { "type": { "numeric": true } }, "fontSize": { "type": { "numeric": true } }, "color": { "type": { "fill": { "solid": { "color": true } } } }, "bold": { "type": { "bool": true } }, "italic": { "type": { "bool": true } } } },
+        "valueSettings":    { "properties": { "fontFamily": { "type": { "numeric": true } }, "fontSize": { "type": { "numeric": true } }, "color": { "type": { "fill": { "solid": { "color": true } } } }, "bold": { "type": { "bool": true } }, "italic": { "type": { "bool": true } }, "showTrendArrow": { "type": { "bool": true } }, "arrowColor": { "type": { "fill": { "solid": { "color": true } } } }, "displayUnits": { "type": { "formatting": { "labelDisplayUnits": true } } }, "decimalPlaces": { "type": { "numeric": true } } } },
+        "badgeSettings":    { "properties": { "showPY": { "type": { "bool": true } }, "showBudget": { "type": { "bool": true } }, "fontSize": { "type": { "numeric": true } }, "borderRadius": { "type": { "numeric": true } }, "positiveBackground": { "type": { "fill": { "solid": { "color": true } } } }, "positiveColor": { "type": { "fill": { "solid": { "color": true } } } }, "negativeBackground": { "type": { "fill": { "solid": { "color": true } } } }, "negativeColor": { "type": { "fill": { "solid": { "color": true } } } }, "threshold": { "type": { "numeric": true } } } },
+        "labelSettings":    { "properties": { "actualLabelIdx": { "type": { "numeric": true } }, "pyLabelIdx": { "type": { "numeric": true } }, "budgetLabelIdx": { "type": { "numeric": true } }, "tooltip1LabelIdx": { "type": { "numeric": true } }, "tooltip2LabelIdx": { "type": { "numeric": true } }, "tooltip3LabelIdx": { "type": { "numeric": true } } } },
+        "deltaSettings":    { "properties": { "showDelta": { "type": { "bool": true } }, "showDeltaPct": { "type": { "bool": true } }, "showDeltaAbs": { "type": { "bool": true } }, "pyDeltaLabelIdx": { "type": { "numeric": true } }, "budgetDeltaLabelIdx": { "type": { "numeric": true } }, "positiveDeltaColor": { "type": { "fill": { "solid": { "color": true } } } }, "negativeDeltaColor": { "type": { "fill": { "solid": { "color": true } } } } } },
+        "sparklineSettings": { "properties": { "stripHeight": { "type": { "numeric": true } }, "actualColor": { "type": { "fill": { "solid": { "color": true } } } }, "actualWidth": { "type": { "numeric": true } }, "pyColor": { "type": { "fill": { "solid": { "color": true } } } }, "pyWidth": { "type": { "numeric": true } }, "budgetColor": { "type": { "fill": { "solid": { "color": true } } } }, "budgetWidth": { "type": { "numeric": true } }, "fillUnder": { "type": { "bool": true } }, "autoScale": { "type": { "bool": true } }, "monthThreshold": { "type": { "numeric": true } }, "showTooltip": { "type": { "bool": true } }, "markerShape": { "type": { "numeric": true } }, "markerSize": { "type": { "numeric": true } } } }
+    },
+    "dataViewMappings": [
+        {
+            "conditions": [
+                { "category": { "max": 1 }, "category2": { "max": 1 }, "actual": { "max": 1 }, "py": { "max": 1 }, "budget": { "max": 1 }, "tooltip1": { "max": 1 }, "tooltip2": { "max": 1 }, "tooltip3": { "max": 1 } }
+            ],
+            "categorical": {
+                "categories": {
+                    "select": [
+                        { "for": { "in": "category"  } },
+                        { "for": { "in": "category2" } }
+                    ],
+                    "dataReductionAlgorithm": { "top": { "count": 1000 } }
+                },
+                "values": {
+                    "select": [
+                        { "bind": { "to": "actual"   } },
+                        { "bind": { "to": "py"       } },
+                        { "bind": { "to": "budget"   } },
+                        { "bind": { "to": "tooltip1" } },
+                        { "bind": { "to": "tooltip2" } },
+                        { "bind": { "to": "tooltip3" } }
+                    ]
+                }
+            }
+        }
+    ],
+    "sorting": { "default": {} },
+    "privileges": []
+}
